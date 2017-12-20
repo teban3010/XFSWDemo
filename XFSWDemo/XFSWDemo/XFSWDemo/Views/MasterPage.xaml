@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFSWDemo.Views.MasterPage"             
+             xmlns:local="using:XFSWDemo.Views"
+			 Padding="0,40,0,0"
+			 Icon="hamburger.png"
+			 Title="Personal Organiser">
+    <StackLayout>
+        <ListView x:Name="listView">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:MasterPageItem}">
+                    <local:MasterPageItem Title="Home" IconSource="contacts.png" TargetType="{x:Type local:HomePage}" />
+                    <local:MasterPageItem Title="People" IconSource="People.png" TargetType="{x:Type local:PeoplePage}" />
+                    <local:MasterPageItem Title="Planet" IconSource="Planet.png" TargetType="{x:Type local:PlanetsPage}" />
+                    <local:MasterPageItem Title="StarShips" IconSource="Starship.png" TargetType="{x:Type local:StarShipsPage}" />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1" Text="{Binding Title}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

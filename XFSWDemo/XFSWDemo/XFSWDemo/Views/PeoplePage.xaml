@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFSWDemo.Views.PeoplePage"
+			 Title="People">
+    <ContentPage.Content>
+        <ListView ItemTapped="OnItemTapped"
+                IsPullToRefreshEnabled="True"
+                RefreshCommand="{Binding RefreshCommand}"
+                IsRefreshing="{Binding IsBusy}"
+	              ItemsSource="{Binding People}"
+                HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="0"/>
+
+                            <Label Text="Height" Grid.Row="1" Grid.Column="0"/>
+                            <Label Text="Mass" Grid.Row="1" Grid.Column="1"/>
+                            <Label Text="{Binding Height}" Grid.Row="2" Grid.Column="0"/>
+                            <Label Text="{Binding Mass}" Grid.Row="2" Grid.Column="1"/>
+
+                            <Label Text="Hair Color" Grid.Row="3" Grid.Column="0"/>
+                            <Label Text="Skin Color" Grid.Row="3" Grid.Column="1"/>
+                            <Label Text="{Binding Hair_color}" Grid.Row="4" Grid.Column="0"/>
+                            <Label Text="{Binding Skin_color}" Grid.Row="4" Grid.Column="1"/>
+
+                            <Label Text="Eye Color" Grid.Row="5" Grid.Column="0"/>
+                            <Label Text="Birth Year" Grid.Row="5" Grid.Column="1"/>
+                            <Label Text="{Binding Eye_color}" Grid.Row="6" Grid.Column="0"/>
+                            <Label Text="{Binding Birth_year}" Grid.Row="6" Grid.Column="1"/>
+
+                            <Label Text="Gender" Grid.Row="7" Grid.Column="0"/>
+                            <Label Text="{Binding Gender}" Grid.Row="7" Grid.Column="1"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFSWDemo.Views.StarShipsPage"
+			 Title="StarShips">
+    <ContentPage.Content>
+        <ListView ItemTapped="OnItemTapped"
+                IsPullToRefreshEnabled="True"
+                RefreshCommand="{Binding RefreshCommand}"
+                IsRefreshing="{Binding IsBusy}"
+	              ItemsSource="{Binding StarShips}"
+                HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="0"/>
+
+                            <Label Text="Model" Grid.Row="1" Grid.Column="0"/>
+                            <Label Text="Manufacturer" Grid.Row="1" Grid.Column="1"/>
+                            <Label Text="{Binding Model}" Grid.Row="2" Grid.Column="0"/>
+                            <Label Text="{Binding Manufacturer}" Grid.Row="2" Grid.Column="1"/>
+
+                            <Label Text="Cost in credits" Grid.Row="3" Grid.Column="0"/>
+                            <Label Text="Length" Grid.Row="3" Grid.Column="1"/>
+                            <Label Text="{Binding Cost_in_credits}" Grid.Row="4" Grid.Column="0"/>
+                            <Label Text="{Binding Length}" Grid.Row="4" Grid.Column="1"/>
+
+                            <Label Text="Max atmosphering speed" Grid.Row="5" Grid.Column="0"/>
+                            <Label Text="Crew" Grid.Row="5" Grid.Column="1"/>
+                            <Label Text="{Binding Max_atmosphering_speed}" Grid.Row="6" Grid.Column="0"/>
+                            <Label Text="{Binding Crew}" Grid.Row="6" Grid.Column="1"/>
+
+                            <Label Text="Max atmosphering speed" Grid.Row="7" Grid.Column="0"/>
+                            <Label Text="Crew" Grid.Row="7" Grid.Column="1"/>
+                            <Label Text="{Binding Max_atmosphering_speed}" Grid.Row="8" Grid.Column="0"/>
+                            <Label Text="{Binding Crew}" Grid.Row="8" Grid.Column="1"/>
+
+                            <Label Text="Max atmosphering speed" Grid.Row="5" Grid.Column="0"/>
+                            <Label Text="Crew" Grid.Row="5" Grid.Column="1"/>
+                            <Label Text="{Binding Max_atmosphering_speed}" Grid.Row="6" Grid.Column="0"/>
+                            <Label Text="{Binding Crew}" Grid.Row="6" Grid.Column="1"/>
+
+                            <Label Text="Max atmosphering speed" Grid.Row="5" Grid.Column="0"/>
+                            <Label Text="Crew" Grid.Row="5" Grid.Column="1"/>
+                            <Label Text="{Binding Max_atmosphering_speed}" Grid.Row="6" Grid.Column="0"/>
+                            <Label Text="{Binding Crew}" Grid.Row="6" Grid.Column="1"/>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

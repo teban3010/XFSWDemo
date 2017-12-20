@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFSWDemo.Views.PlanetsPage"
+			 Title="Planets Page">
+    <ContentPage.Content>
+        <ListView ItemTapped="OnItemTapped"
+                IsPullToRefreshEnabled="True"
+                RefreshCommand="{Binding RefreshCommand}"
+                IsRefreshing="{Binding IsBusy}"
+	              ItemsSource="{Binding Planets}"
+                HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="0"/>
+
+                            <Label Text="Rotation period" Grid.Row="1" Grid.Column="0"/>
+                            <Label Text="Orbital period" Grid.Row="1" Grid.Column="1"/>
+                            <Label Text="{Binding Rotation_period}" Grid.Row="2" Grid.Column="0"/>
+                            <Label Text="{Binding Orbital_period}" Grid.Row="2" Grid.Column="1"/>
+
+                            <Label Text="Diameter" Grid.Row="3" Grid.Column="0"/>
+                            <Label Text="Climate" Grid.Row="3" Grid.Column="1"/>
+                            <Label Text="{Binding Diameter}" Grid.Row="4" Grid.Column="0"/>
+                            <Label Text="{Binding Climate}" Grid.Row="4" Grid.Column="1"/>
+
+                            <Label Text="Gravity" Grid.Row="5" Grid.Column="0"/>
+                            <Label Text="Terrain" Grid.Row="5" Grid.Column="1"/>
+                            <Label Text="{Binding Gravity}" Grid.Row="6" Grid.Column="0"/>
+                            <Label Text="{Binding Terrain}" Grid.Row="6" Grid.Column="1"/>
+
+                            <Label Text="Surface water" Grid.Row="7" Grid.Column="0"/>
+                            <Label Text="Population" Grid.Row="7" Grid.Column="1"/>
+                            <Label Text="{Binding Surface_water}" Grid.Row="8" Grid.Column="0"/>
+                            <Label Text="{Binding Population}" Grid.Row="8" Grid.Column="1"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
